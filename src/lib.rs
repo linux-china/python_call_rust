@@ -13,6 +13,11 @@ fn word_suffix(_py: Python, module: &PyModule) -> PyResult<()> {
 
 #[pyfunction]
 fn find_words(src: &str, suffix: &str) -> PyResult<Vec<String>> {
+    let result = find_words_impl(src, suffix);
+    Ok(result)
+}
+
+fn find_words_impl(src: &str, suffix: &str) -> Vec<String> {
     let mut v = vec![];
     let filtered = src.split(",").filter_map(|s| {
         let trimmed = s.trim();
@@ -22,17 +27,19 @@ fn find_words(src: &str, suffix: &str) -> PyResult<Vec<String>> {
             None
         }
     });
-
     for s in filtered {
         v.push(s);
     }
-    Ok(v)
+    v
 }
 
 #[cfg(test)]
 mod tests {
+    use crate::find_words_impl;
+
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        let result = find_words_impl("Baz,Jazz,Mash,Splash,Squash", "sh");
+        println!("{:#?}", result);
     }
 }
