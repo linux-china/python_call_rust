@@ -1,7 +1,7 @@
 Python call Rust
 ================
 
-Python calls Rust code by PyO3
+Rust native Python extensions with PyO3 by maturin.
 
 # References
 
