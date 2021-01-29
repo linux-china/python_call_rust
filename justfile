@@ -5,8 +5,8 @@ build:
    maturin develop
 
 install: activate
-   pip install maturin
-   pip install cffi
+   pip install --upgrade maturin
+   pip install --upgrade cffi
 
 activate:
    source venv/bin/activate
