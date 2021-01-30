@@ -4,7 +4,7 @@ run: build
 build:
    maturin develop
 
-install: activate
+install:
    pip install --upgrade maturin
    pip install --upgrade cffi
 
