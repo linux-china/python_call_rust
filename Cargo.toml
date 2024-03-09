@@ -2,7 +2,7 @@
 name = "python_call_rust"
 version = "0.1.0"
 authors = ["linux_china <libing.chen@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,4 +11,4 @@ name = "word_suffix"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.15", features = ["extension-module"] }
+pyo3 = { version = "0.20", features = ["extension-module"] }
