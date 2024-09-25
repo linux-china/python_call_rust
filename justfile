@@ -7,5 +7,5 @@ build:
    maturin develop
 
 install:
-   pip install --upgrade maturin
-   pip install --upgrade cffi
+   pip3 install --upgrade maturin
+   pip3 install --upgrade cffi
