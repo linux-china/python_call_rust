@@ -6,8 +6,8 @@ use pyo3::wrap_pyfunction;
 
 /// This module is a python module implemented in Rust.
 #[pymodule]
-fn word_suffix(_py: Python, module: &PyModule) -> PyResult<()> {
-    module.add_function(wrap_pyfunction!(find_words, module)?)?;
+fn word_suffix(m: &Bound<'_, PyModule>) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(find_words, m)?)?;
     Ok(())
 }
 
