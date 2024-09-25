@@ -6,6 +6,8 @@ run: build
 build:
    maturin develop
 
-install:
-   pip3 install --upgrade maturin
-   pip3 install --upgrade cffi
+setup:
+   uv venv --python 3.11
+   ./.venv/bin/pip3 -m ensurepip
+   pip3 install maturin
+   pip3 install cffi
