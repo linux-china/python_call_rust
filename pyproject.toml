@@ -1,0 +1,18 @@
+[project]
+name = "python-call-rust"
+version = "0.1.0"
+description = "Python call Rust by PyO3"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = ["maturin>=1.7.4", "pip>=24.3.1", "setuptools>=75.3.0"]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+# "extension-module" tells pyo3 we want to build an extension module (skips linking against libpython.so)
+features = ["pyo3/extension-module"]
