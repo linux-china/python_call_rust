@@ -7,3 +7,4 @@ Rust native Python extensions with PyO3 by maturin.
 
 * PyO3 user guide: https://pyo3.rs/
 * maturin: Build and publish crates with pyo3: https://github.com/PyO3/maturin
+* Maturin User Guide: https://www.maturin.rs/#maturin-user-guide
