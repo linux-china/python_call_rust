@@ -1,3 +1,3 @@
-import word_suffix
+from word_suffix import find_words
 
-print(word_suffix.find_words("Baz,Jazz,Mash,Splash,Squash", "sh"))
+print(find_words("Baz,Jazz,Mash,Splash,Squash", "sh"))
