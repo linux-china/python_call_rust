@@ -1,7 +1,11 @@
-export PATH := justfile_directory() + "/.venv/bin:" + env_var('PATH')
-
-run: build
-    python3 word_suffix/demo.py
+export PATH := justfile_directory() + '/.venv/bin:' + env_var('PATH')
 
 build:
-    maturin develop
+  maturin develop
+
+hello:
+  uv run hello.py
+
+release:
+  maturin develop --release
+  maturin build --release
