@@ -6,14 +6,22 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
 
-[dependency-groups]
-dev = ["maturin>=1.7.4", "pip>=24.3.1", "setuptools>=75.3.0"]
+
+[tool.maturin]
+module-name = "word_suffix._core"
+python-packages = ["word_suffix"]
+python-source = "src"
 
 [build-system]
 requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
-[tool.maturin]
-# "extension-module" tells pyo3 we want to build an extension module (skips linking against libpython.so)
-features = ["pyo3/extension-module"]
-module-name = "word_suffix.word_suffix_stub"
+[dependency-groups]
+dev = [
+    "maturin>=1.7.8",
+    "pip>=24.3.1",
+    "setuptools>=75.6.0",
+]
+
+[project.scripts]
+word-suffix = "word_suffix:main"
