@@ -2,13 +2,20 @@
 //! from a comma separated string of words that ends with the given suffix
 
 use pyo3::prelude::*;
-use pyo3::wrap_pyfunction;
 
-/// This module is a python module implemented in Rust.
+/// A Python module implemented in Rust. The name of this function must match
+/// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
+/// import the module.
 #[pymodule]
-fn word_suffix_stub(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn _core(m: &Bound<'_, PyModule>) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(hello_from_rust, m)?)?;
     m.add_function(wrap_pyfunction!(find_words, m)?)?;
     Ok(())
+}
+
+#[pyfunction]
+fn hello_from_rust() -> String {
+    "Hello from Rust!".to_string()
 }
 
 #[pyfunction]
